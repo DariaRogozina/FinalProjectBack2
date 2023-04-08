@@ -11,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -18,6 +19,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "cdnUrl"
 })
 @Generated("jsonschema2pojo")
+@Data
 public class MainImage {
 
     @JsonProperty("id")
@@ -26,6 +28,9 @@ public class MainImage {
     private String cdnUrl;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public MainImage() {
+    }
 
     @JsonProperty("id")
     public Object getId() {

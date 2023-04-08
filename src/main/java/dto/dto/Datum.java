@@ -13,6 +13,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonInclude;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonPropertyOrder;
+import lombok.Data;
 
 @JsonInclude(JsonInclude.Include.NON_NULL)
 @JsonPropertyOrder({
@@ -29,6 +30,7 @@ import com.fasterxml.jackson.annotation.JsonPropertyOrder;
     "draft"
 })
 @Generated("jsonschema2pojo")
+@Data
 public class Datum {
 
     @JsonProperty("id")
@@ -42,7 +44,7 @@ public class Datum {
     @JsonProperty("authorId")
     private Long authorId;
     @JsonProperty("mainImage")
-    private dto.MainImage mainImage;
+    private dto.dto.MainImage mainImage;
     @JsonProperty("updatedAt")
     private String updatedAt;
     @JsonProperty("createdAt")
@@ -55,6 +57,9 @@ public class Datum {
     private Boolean draft;
     @JsonIgnore
     private Map<String, Object> additionalProperties = new LinkedHashMap<String, Object>();
+
+    public Datum() {
+    }
 
     @JsonProperty("id")
     public Long getId() {
@@ -107,12 +112,12 @@ public class Datum {
     }
 
     @JsonProperty("mainImage")
-    public dto.MainImage getMainImage() {
+    public dto.dto.MainImage getMainImage() {
         return mainImage;
     }
 
     @JsonProperty("mainImage")
-    public void setMainImage(dto.MainImage mainImage) {
+    public void setMainImage(dto.dto.MainImage mainImage) {
         this.mainImage = mainImage;
     }
 
